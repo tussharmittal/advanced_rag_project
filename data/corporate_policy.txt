@@ -1,0 +1,30 @@
+================================================================================
+FINSECURE GLOBAL ENTERPRISE CORP: INFORMATION SECURITY AND LOGICAL ACCESS POLICY
+================================================================================
+Document Reference: FS-ISPO-2026-V4.2
+Classification: RESTRICTED - INTERNAL COMPLIANCE ONLY
+
+CHAPTER 1: DATA CLASSIFICATION AND STORAGE ENVIRONMENTS
+--------------------------------------------------------------------------------
+Section 1.1: Core Data Environments
+The Corporation segregates data into three logical environments: The Vault (Production Data Warehouse), The Sandbox (Staging/Testing), and The Perimeter (External Edge Networks). All Personally Identifiable Information (PII) must reside strictly within The Vault. Under no circumstances may real customer data be extracted to The Sandbox. 
+
+Section 1.2: Liability and Compliance Violations
+Violations of Section 1.1 are subject to immediate regulatory review. If PII data is found leaked from The Vault into The Sandbox, the department responsible will face an internal engineering audit. Furthermore, if a data breach occurs because PII was left unencrypted in The Perimeter, the Corporation faces an automatic regulatory baseline fine of $5,000,000 under the Financial Data Protection Act (FDPA). However, if the leak is traced back to a multi-tenant cloud configuration error in The Sandbox, the fine is mitigated to $1,500,000, provided the notification occurs within 72 hours.
+
+CHAPTER 2: VENDOR PROVISIONING AND IDENTITY CORES
+--------------------------------------------------------------------------------
+Section 2.1: Access Protocols for Subcontractors
+All external contractors and third-party vendors must authenticate through the Unified Identity Core (UIC). Vendors are granted "least-privilege" access tokens that expire automatically every 8 hours. 
+
+Section 2.2: Fine Matrix for Identity Mismanagement
+Identity Management Teams must audit UIC tokens weekly. If an unauthorized vendor token remains active for more than 24 hours without explicit written authorization from the CISO, the vendor contract is subject to immediate suspension. A secondary administrative penalty of $250,000 is assessed per instance against the violating internal business unit. This penalty increases exponentially to $1,000,000 if the active token had administrative or root-level write access to the Core Data Environments outlined in Chapter 1.
+
+CHAPTER 3: NETWORK PERIMETER DEFENSES AND ENCRYPTION
+--------------------------------------------------------------------------------
+Section 3.1: Cryptographic Standards
+All data in transit between the Core Data Environments must be encrypted using TLS 1.3. Data at rest inside The Vault must utilize AES-256 bit encryption. 
+
+Section 3.2: Enforcement Actions
+Failure to implement TLS 1.3 across external edge connections triggers an immediate emergency patch window (4-hour SLA). Non-compliance beyond the SLA results in a structural operations penalty of $50,000 daily. If this non-compliance leads to data exfiltration, the penalties described in Section 1.2 take precedence.
+================================================================================
